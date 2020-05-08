@@ -3,19 +3,11 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
 
-        <color name="primary">#2196F3</color>
-        <color name="primary_dark">#1976D2</color>
-        <color name="primary_light">#BBDEFB</color>
-        <color name="accent">#FF4081</color>
-        <color name="primary_text">#212121</color>
-        <color name="secondary_text">#757575</color>
-        <color name="icons">#FFFFFF</color>
-        <color name="divider">#BDBDBD</color>
-        <!-- Customize your theme here.
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item> -->
     </style>
+
     <style name="RaisedButtonDark" parent="Theme.AppCompat.Light">
         <item name="colorButtonNormal">@color/colorPrimaryDark</item>
         <item name="colorControlHighlight">@color/colorPrimary</item>
@@ -31,6 +23,21 @@
         <item name="colorAccent">@color/editTextColorWhite</item>
         <item name="colorControlNormal">@color/editTextColorWhite</item>
         <item name="colorControlActivated">@color/editTextColorWhite</item>
+    </style>
+
+    <style name="EditTextBlack" parent="TextAppearance.AppCompat">
+
+        <item name="android:textColorHint">@color/editTextColorBlack</item>
+        <item name="android:textSize">@dimen/edittext_textsize_login</item> <!--para textos es mejor usar sp-->
+        <item name="android:textColorPrimary">@color/editTextColorBlack</item>
+        <item name="colorAccent">@color/editTextColorBlack</item>
+        <item name="colorControlNormal">@color/editTextColorBlack</item>
+        <item name="colorControlActivated">@color/editTextColorBlack</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <!-- Customize color of navigation drawer icon and back arrow -->
+        <item name="colorControlNormal">@color/editTextColorWhite</item>
     </style>
 
 

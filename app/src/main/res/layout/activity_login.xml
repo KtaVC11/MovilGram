@@ -21,22 +21,29 @@
         android:layout_height="match_parent"
         android:layout_weight="0.6"
         >
+
         <ImageView
             android:id="@+id/logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:background="@drawable/platzigram"
-             />
+            android:background="@drawable/movilgram2" />
 
 
     </RelativeLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="0.4"
+        android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
+        android:paddingLeft="32dp"
+        android:paddingRight="32dp"
         >
         <!--este da estilo por eso no lleva id-->
         <com.google.android.material.textfield.TextInputLayout
@@ -50,7 +57,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/hint_username"
-
 
                 />
 
@@ -80,8 +86,38 @@
             android:text="@string/text_button_login"
             android:theme="@style/RaisedButtonDark"
             />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/dontHaveAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dont_have_account"
+                android:textColor="@color/editTextColorWhite"
+                android:textStyle="bold"
+                android:textSize="@dimen/textsize_donthaveaccount"
+                >
+            </TextView>
+
+            <TextView
+                android:id="@+id/createHere"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/create_here"
+                android:textColor="@color/editTextColorWhite"
+                android:textStyle="bold"
+                android:textSize="@dimen/textsize_donthaveaccount"
+                android:layout_toRightOf="@id/dontHaveAccount"
+                android:onClick="goCreateAccount"
+                >
+            </TextView>
+        </RelativeLayout>
 
     </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
 

@@ -10,7 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ReferenciaActivity"></activity>
-        <activity android:name=".View.CreateAccountActivity" />
+
+
+        <!--CreateAccountActivity es la ventana hija de login y login la padre,
+        entonces para que CreateAccountActivity se devuelva del toolbar
+         se hace este codigo y para que funcione en versiones anteriores con el meta-data-->
+        <activity android:name=".View.CreateAccountActivity"
+            android:parentActivityName=".LoginActivity"
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LoginActivity"
+            />
+        </activity>
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
