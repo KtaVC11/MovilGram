@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.movilgram.View.ContainerActivity;
-import com.example.movilgram.View.CreateAccountActivity;
+import com.example.movilgram.view.ContainerActivity;
+import com.example.movilgram.view.CreateAccountActivity;
 
 public class LoginActivity extends AppCompatActivity {
 

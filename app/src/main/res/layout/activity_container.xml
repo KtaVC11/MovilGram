@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.ContainerActivity">
+    tools:context=".view.ContainerActivity">
 
     <FrameLayout
         android:id="@+id/container"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingBottom="@dimen/bottombar_height"
 

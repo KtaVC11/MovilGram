@@ -1,4 +1,4 @@
-package com.example.movilgram.View;
+package com.example.movilgram.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;

@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".View.ContainerActivity"></activity>
+        <activity android:name=".view.ContainerActivity"></activity>
         <activity android:name=".ReferenciaActivity" />
         <!--
 CreateAccountActivity es la ventana hija de login y login la padre,
@@ -17,7 +17,7 @@ CreateAccountActivity es la ventana hija de login y login la padre,
          se hace este codigo y para que funcione en versiones anteriores con el meta-data
         -->
         <activity
-            android:name=".View.CreateAccountActivity"
+            android:name=".view.CreateAccountActivity"
             android:parentActivityName=".LoginActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

@@ -1,4 +1,4 @@
-package com.example.movilgram.View.fragments;
+package com.example.movilgram.view.fragments;
 
 import android.os.Bundle;
 
