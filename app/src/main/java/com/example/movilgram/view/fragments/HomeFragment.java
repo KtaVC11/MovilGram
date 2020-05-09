@@ -34,7 +34,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) { //debe mostrar el toolbar, el recyclerView
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home,container,false);
-        showToolbar("Home",false,view);
+        showToolbar(getResources().getString(R.string.tab_home),false,view);
 
         RecyclerView picturesRecycler = (RecyclerView) view.findViewById(R.id.pictureRecycler);
 
@@ -49,9 +49,9 @@ public class HomeFragment extends Fragment {
 
     public ArrayList<Picture> buildPictures(){
         ArrayList<Picture> pictures = new ArrayList<>();
-        pictures.add(new Picture("..../drawable/image.png","Katalina Viquez","4 dias" ,"3"));
-        pictures.add(new Picture("..../drawable/image.png","Melany Monge","3 dias" ,"10"));
-        pictures.add(new Picture("..../drawable/image.png","Uriel Ramirez","2 dias" ,"9"));
+        pictures.add(new Picture("..../drawable/image.png","Katalina Viquez","4 dias" ,"3 Me Gusta"));
+        pictures.add(new Picture("..../drawable/image.png","Melany Monge","3 dias" ,"10 Me Gusta"));
+        pictures.add(new Picture("..../drawable/image.png","Uriel Ramirez","2 dias" ,"9 Me Gusta"));
     return pictures;
     }
 
