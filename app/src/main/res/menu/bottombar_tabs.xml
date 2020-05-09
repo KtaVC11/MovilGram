@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:barColorWhenSelected="@color/colorPrimary"
+        android:icon="@drawable/ic_search"
+        android:id="@+id/search"
+        android:title="@string/tab_search"/>
+    <item
+        android:barColorWhenSelected="@color/colorPrimary"
+        android:icon="@drawable/ic_home"
+        android:id="@+id/home"
+        android:title="@string/tab_home"/>
+    <item
+        android:barColorWhenSelected="@color/colorPrimary"
+        android:icon="@drawable/ic_user"
+        android:id="@+id/profile"
+        android:title="@string/tab_user"/>
+
+</menu>
