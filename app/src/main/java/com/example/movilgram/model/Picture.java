@@ -1,23 +1,23 @@
 package com.example.movilgram.model;
 
 public class Picture {
-    private String picture;
+    private int picture;
     private String userName;
     private String time;
     private String like_number="0";
 
-    public Picture(String picture, String userName, String time, String like_number) {
+    public Picture(int picture, String userName, String time, String like_number) {
         this.picture = picture;
         this.userName = userName;
         this.time = time;
         this.like_number = like_number;
     }
 
-    public String getPicture() {
+    public int getPicture() {
         return picture;
     }
 
-    public void setPicture(String picture) {
+    public void setPicture(int picture) {
         this.picture = picture;
     }
 

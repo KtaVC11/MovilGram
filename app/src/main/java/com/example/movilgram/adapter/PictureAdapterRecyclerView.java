@@ -2,6 +2,7 @@ package com.example.movilgram.adapter;
 
 import android.app.Activity;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.movilgram.R;
 import com.example.movilgram.model.Picture;
+import com.example.movilgram.view.PictureDetailActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -43,6 +45,15 @@ public class PictureAdapterRecyclerView extends RecyclerView.Adapter<PictureAdap
         holder.timeCard.setText(picture.getTime());
         holder.likeNumberCard.setText(picture.getLike_number());
         Picasso.get().load(picture.getPicture()).into(holder.pictureCard);
+
+        holder.pictureCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity, PictureDetailActivity.class); //donde estoy ubicado y a donde quiero ir
+                //contexto de recyclerView se inicia a la actividad asi
+                activity.startActivity(intent);
+            }
+        });
     }
 
     @Override
