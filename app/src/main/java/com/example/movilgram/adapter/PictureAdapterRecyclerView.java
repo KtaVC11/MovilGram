@@ -3,6 +3,8 @@ package com.example.movilgram.adapter;
 import android.app.Activity;
 
 import android.content.Intent;
+import android.os.Build;
+import android.transition.Explode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +12,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.recyclerview.widget.RecyclerView;
+
 
 import com.example.movilgram.R;
 import com.example.movilgram.model.Picture;
@@ -50,8 +54,16 @@ public class PictureAdapterRecyclerView extends RecyclerView.Adapter<PictureAdap
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(activity, PictureDetailActivity.class); //donde estoy ubicado y a donde quiero ir
-                //contexto de recyclerView se inicia a la actividad asi
-                activity.startActivity(intent);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {//validacion para que la transicion no explote
+                    Explode explode = new Explode();
+                    explode.setDuration(1000);
+                    //asigna la transicion
+                    activity.getWindow().setExitTransition(explode);
+                    activity.startActivity(intent,ActivityOptionsCompat.makeSceneTransitionAnimation(activity,view,activity.getString(R.string.transitionname_picture)).toBundle());
+                }else { //si alguien corre la actividad en una version menor a lollipop
+//contexto de recyclerView se inicia a la actividad asi
+                    activity.startActivity(intent);
+                }
             }
         });
     }
