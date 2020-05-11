@@ -34,7 +34,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) { //debe mostrar el toolbar, el recyclerView
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home,container,false);
-        showToolbar(getResources().getString(R.string.tab_home),false,view);
+        //showToolbar(getResources().getString(R.string.tab_home),false,view);
 
         RecyclerView picturesRecycler = (RecyclerView) view.findViewById(R.id.pictureRecycler);
 
@@ -55,12 +55,12 @@ public class HomeFragment extends Fragment {
     return pictures;
     }
 
-
+/*
     public void showToolbar(String title,boolean upButton,View view){ //recibe un titulo, la mayoria y algunos botones
         Toolbar toolbar =(Toolbar) view.findViewById(R.id.toolbar);
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
          //para que se vea bien en versiones anteriores
         ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle(title);
         ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(upButton);//en caso de que tenga boton para que se vea el upButton osea un boton arriba en la jerarquia
-    }
+    }*/
 }
