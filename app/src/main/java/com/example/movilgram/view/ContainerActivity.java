@@ -93,18 +93,17 @@ public class ContainerActivity extends AppCompatActivity {
         setSupportActionBar(toolbar); //para que se vea bien en versiones anteriores
         getSupportActionBar().setTitle(title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(upButton);//en caso de que tenga boton para que se vea el upButton osea un boton arriba en la jerarquia
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_home);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.home);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
-            case android.R.id: //home
+            case android.R.id.home: //home
                 //abre e menu lateral
                 drawerLayout.openDrawer(GravityCompat.START);
                 return true;
-
         }
         return super.onOptionsItemSelected(item);
     }
