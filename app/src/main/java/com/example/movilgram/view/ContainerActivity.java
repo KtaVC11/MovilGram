@@ -19,11 +19,13 @@ import com.example.movilgram.view.fragments.HomeFragment;
 import com.example.movilgram.view.fragments.ProfileFragment;
 import com.example.movilgram.view.fragments.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationView;
 
 
 public class ContainerActivity extends AppCompatActivity {
 
     private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
 
     //es mejor declarar las variables por fuera de los métodos para que todos tengan acceso a esas variables
     // y se pueda tener mejor organizado el código
@@ -40,6 +42,37 @@ public class ContainerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_container);
         drawerLayout= (DrawerLayout) findViewById(R.id.drawer_layout);
         showToolbar(getResources().getString(R.string.tab_home),true);//llamar un recurso, en este caso string y se llama al string que se creo, el true para que se vea
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                boolean fragmentTransaction = false;
+                Fragment fragment = null;
+                switch(menuItem.getItemId()){
+                    case R.id.menu_home:
+                        fragment = new HomeFragment();
+                        fragmentTransaction= true;
+                        break;
+
+                    case R.id.menu_search:
+                        fragment = new SearchFragment();
+                        fragmentTransaction = true;
+                        break;
+
+                    case R.id.menu_user:
+                        fragment = new ProfileFragment();
+                        fragmentTransaction=true;
+                        break;
+                }
+                if(fragmentTransaction){
+                    //getSupportFragmentManager().beginTransaction().replace(R.id.activity_container,fragment).commit();
+                    menuItem.setCheckable(true);
+                    getSupportActionBar().setTitle(menuItem.getTitle());
+                    drawerLayout.closeDrawers();
+                }
+
+                return true;
+            }
+        });
 
         //Aqui se declaran todos los fragments que se van a usar
         home = new HomeFragment();
