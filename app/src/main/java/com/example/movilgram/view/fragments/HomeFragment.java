@@ -49,9 +49,9 @@ public class HomeFragment extends Fragment {
 
     public ArrayList<Picture> buildPictures(){
         ArrayList<Picture> pictures = new ArrayList<>();
-        pictures.add(new Picture(R.drawable.descarga,"Katalina Viquez","4 dias" ,"3 Me Gusta"));
-        pictures.add(new Picture(R.drawable.mountain,"Melany Monge","3 dias" ,"10 Me Gusta"));
-        pictures.add(new Picture(R.drawable.future_city,"Uriel Ramirez","2 dias" ,"9 Me Gusta"));
+        pictures.add(new Picture(R.drawable.auto2,"Audi","4 dias" ,"3 Me Gusta"));
+        pictures.add(new Picture(R.drawable.auto6,"Volvo","3 dias" ,"10 Me Gusta"));
+        pictures.add(new Picture(R.drawable.auto7,"Audi","2 dias" ,"9 Me Gusta"));
     return pictures;
     }
 

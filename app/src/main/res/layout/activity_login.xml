@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorWhiteTransparent"
     >
 
 <LinearLayout
@@ -27,7 +27,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:background="@drawable/movilgram2" />
+            android:background="@drawable/online_shop" />
 
 
     </RelativeLayout>
@@ -49,7 +49,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/EditTextWhite">
+            android:theme="@style/EditTextBlack">
 
 
             <com.google.android.material.textfield.TextInputEditText
@@ -65,7 +65,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/EditTextWhite">
+            android:theme="@style/EditTextBlack">
 
 
             <com.google.android.material.textfield.TextInputEditText
@@ -97,7 +97,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/dont_have_account"
-                android:textColor="@color/editTextColorWhite"
+                android:textColor="@color/editTextColorBlack"
                 android:textStyle="bold"
                 android:textSize="@dimen/textsize_donthaveaccount"
                 >
@@ -108,7 +108,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/create_here"
-                android:textColor="@color/editTextColorWhite"
+                android:textColor="@color/editTextColorBlack"
                 android:textStyle="bold"
                 android:textSize="@dimen/textsize_donthaveaccount"
                 android:layout_toRightOf="@id/dontHaveAccount"

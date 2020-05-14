@@ -9,10 +9,10 @@
             android:icon="@drawable/icon_search"
             android:title="Buscar" />
         <item android:id="@+id/menu_user"
-            android:icon="@drawable/icon_user"
-            android:title="Perfil" />
+            android:icon="@drawable/account"
+            android:title="Mi cuenta" />
         <item android:id="@+id/menu_salir"
-            android:icon="@drawable/exit"
+            android:icon="@drawable/logout"
             android:title="Salir" />
 
     </group>
@@ -20,14 +20,14 @@
 <menu>
     <item
         android:id="@+id/menu_activity"
-        android:icon="@drawable/icon_heart"
-        android:title="Actividad">
+        android:icon="@drawable/shopping_cart"
+        android:title="Carrito">
 
     </item>
     <item
         android:id="@+id/menu_messages"
-        android:icon="@drawable/icon_message"
-        android:title="Mensajes">
+        android:icon="@drawable/settings"
+        android:title="Configuracion">
 
     </item>
 

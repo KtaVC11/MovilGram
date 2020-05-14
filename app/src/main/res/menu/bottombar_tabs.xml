@@ -2,15 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/search"
-        android:icon="@drawable/ic_search"
+        android:icon="@drawable/icon_search"
         android:title="@string/tab_search" />
     <item
         android:id="@+id/home"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/icon_home"
         android:title="@string/tab_home" />
     <item
         android:id="@+id/profile"
-        android:icon="@drawable/ic_user"
+        android:icon="@drawable/account"
         android:title="@string/tab_user" />
 
 </menu>
