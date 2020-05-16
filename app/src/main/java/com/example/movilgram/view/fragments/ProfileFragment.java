@@ -13,9 +13,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.movilgram.R;
-import com.example.movilgram.adapter.PictureAdapterRecyclerView;
-import com.example.movilgram.model.Picture;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
+import com.example.movilgram.adapter.AutoAdapterRecyclerView;
+import com.example.movilgram.model.Auto;
 
 import java.util.ArrayList;
 
@@ -42,16 +41,16 @@ public class ProfileFragment extends Fragment {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);//genera la lista vertical
 
         picturesRecycler.setLayoutManager(linearLayoutManager);
-        PictureAdapterRecyclerView pictureAdapterRecyclerView = new PictureAdapterRecyclerView(buildPictures(),R.layout.cardview_picture,getActivity());
+        AutoAdapterRecyclerView pictureAdapterRecyclerView = new AutoAdapterRecyclerView(buildPictures(),R.layout.cardview_picture,getActivity());
         picturesRecycler.setAdapter(pictureAdapterRecyclerView);
         return view;
     }
 
-    public ArrayList<Picture> buildPictures(){
-        ArrayList<Picture> pictures = new ArrayList<>();
-        pictures.add(new Picture(R.drawable.auto2,"Audi","4 dias" ,"3 Me Gusta"));
-        pictures.add(new Picture(R.drawable.auto6,"Volvo","3 dias" ,"10 Me Gusta"));
-        pictures.add(new Picture(R.drawable.auto7,"Audi","2 dias" ,"9 Me Gusta"));
+    public ArrayList<Auto> buildPictures(){
+        ArrayList<Auto> pictures = new ArrayList<>();
+        pictures.add(new Auto(R.drawable.auto2,"Audi","4 dias" ,"3 Me Gusta"));
+        pictures.add(new Auto(R.drawable.auto6,"Volvo","3 dias" ,"10 Me Gusta"));
+        pictures.add(new Auto(R.drawable.auto7,"Audi","2 dias" ,"9 Me Gusta"));
         return pictures;
     }
 

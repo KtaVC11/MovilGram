@@ -17,18 +17,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.example.movilgram.R;
-import com.example.movilgram.model.Picture;
+import com.example.movilgram.model.Auto;
 import com.example.movilgram.view.PictureDetailActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class PictureAdapterRecyclerView extends RecyclerView.Adapter<PictureAdapterRecyclerView.PictureViewHolder> {
-    private ArrayList<Picture> pictures;
+public class AutoAdapterRecyclerView extends RecyclerView.Adapter<AutoAdapterRecyclerView.PictureViewHolder> {
+    private ArrayList<Auto> pictures;
     private int resource; //es el layout-cardview
     private Activity activity;
 
-    public PictureAdapterRecyclerView(ArrayList<Picture> pictures, int resource, Activity activity) {
+    public AutoAdapterRecyclerView(ArrayList<Auto> pictures, int resource, Activity activity) {
         this.pictures = pictures;
         this.resource = resource;
         this.activity = activity;
@@ -43,8 +43,8 @@ public class PictureAdapterRecyclerView extends RecyclerView.Adapter<PictureAdap
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PictureViewHolder holder, int position) { //recorre la lista y va generando tarjetas
-        Picture picture = pictures.get(position);
+    public void onBindViewHolder(@NonNull final PictureViewHolder holder, final int position) { //recorre la lista y va generando tarjetas
+        Auto picture = pictures.get(position);
         holder.usernameCard.setText(picture.getUserName());
         holder.timeCard.setText(picture.getTime());
         holder.likeNumberCard.setText(picture.getLike_number());

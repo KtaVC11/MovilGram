@@ -1,12 +1,12 @@
 package com.example.movilgram.model;
 
-public class Picture {
+public class Auto {
     private int picture;
     private String userName;
     private String time;
     private String like_number="0";
 
-    public Picture(int picture, String userName, String time, String like_number) {
+    public Auto(int picture, String userName, String time, String like_number) {
         this.picture = picture;
         this.userName = userName;
         this.time = time;

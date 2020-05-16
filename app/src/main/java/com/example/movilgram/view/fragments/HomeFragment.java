@@ -2,8 +2,6 @@ package com.example.movilgram.view.fragments;
 
 import android.os.Bundle;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,11 +9,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import com.example.movilgram.R;
-import com.example.movilgram.adapter.PictureAdapterRecyclerView;
-import com.example.movilgram.model.Picture;
+import com.example.movilgram.adapter.AutoAdapterRecyclerView;
+import com.example.movilgram.model.Auto;
 
 import java.util.ArrayList;
 
@@ -42,16 +39,16 @@ public class HomeFragment extends Fragment {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);//genera la lista vertical
 
         picturesRecycler.setLayoutManager(linearLayoutManager);
-        PictureAdapterRecyclerView pictureAdapterRecyclerView = new PictureAdapterRecyclerView(buildPictures(),R.layout.cardview_picture,getActivity());
+        AutoAdapterRecyclerView pictureAdapterRecyclerView = new AutoAdapterRecyclerView(buildPictures(),R.layout.cardview_picture,getActivity());
         picturesRecycler.setAdapter(pictureAdapterRecyclerView);
         return view;
     }
 
-    public ArrayList<Picture> buildPictures(){
-        ArrayList<Picture> pictures = new ArrayList<>();
-        pictures.add(new Picture(R.drawable.auto2,"Audi","4 dias" ,"3 Me Gusta"));
-        pictures.add(new Picture(R.drawable.auto6,"Volvo","3 dias" ,"10 Me Gusta"));
-        pictures.add(new Picture(R.drawable.auto7,"Audi","2 dias" ,"9 Me Gusta"));
+    public ArrayList<Auto> buildPictures(){
+        ArrayList<Auto> pictures = new ArrayList<>();
+        pictures.add(new Auto(R.drawable.auto2,"Audi","4 dias" ,"3 Me Gusta"));
+        pictures.add(new Auto(R.drawable.auto6,"Volvo","3 dias" ,"10 Me Gusta"));
+        pictures.add(new Auto(R.drawable.auto7,"Audi","2 dias" ,"9 Me Gusta"));
     return pictures;
     }
 
