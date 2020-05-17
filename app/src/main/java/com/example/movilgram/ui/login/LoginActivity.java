@@ -1,17 +1,16 @@
-package com.example.movilgram;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.movilgram.ui.login;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.movilgram.view.ContainerActivity;
-import com.example.movilgram.view.CreateAccountActivity;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.movilgram.R;
+import com.example.movilgram.ui.ContainerActivity;
 
 public class LoginActivity extends AppCompatActivity {
     EditText usuario;

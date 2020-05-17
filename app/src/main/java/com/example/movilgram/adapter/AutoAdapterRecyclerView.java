@@ -1,7 +1,6 @@
 package com.example.movilgram.adapter;
 
 import android.app.Activity;
-
 import android.content.Intent;
 import android.os.Build;
 import android.transition.Explode;
@@ -15,10 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-
 import com.example.movilgram.R;
 import com.example.movilgram.model.Auto;
-import com.example.movilgram.view.PictureDetailActivity;
+import com.example.movilgram.ui.product.ProductDetailActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -53,7 +51,7 @@ public class AutoAdapterRecyclerView extends RecyclerView.Adapter<AutoAdapterRec
         holder.pictureCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(activity, PictureDetailActivity.class); //donde estoy ubicado y a donde quiero ir
+                Intent intent = new Intent(activity, ProductDetailActivity.class); //donde estoy ubicado y a donde quiero ir
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {//validacion para que la transicion no explote
                     Explode explode = new Explode();
                     explode.setDuration(1000);

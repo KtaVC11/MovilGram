@@ -1,21 +1,20 @@
-package com.example.movilgram.view.fragments;
+package com.example.movilgram.ui.fragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.movilgram.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ShopingCartFragment extends Fragment {
+public class ShoppingCartFragment extends Fragment {
 
-    public ShopingCartFragment() {
+    public ShoppingCartFragment() {
         // Required empty public constructor
     }
 

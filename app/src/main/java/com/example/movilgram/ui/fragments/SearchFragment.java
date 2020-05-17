@@ -1,24 +1,17 @@
-package com.example.movilgram.view.fragments;
+package com.example.movilgram.ui.fragments;
 
-import android.icu.text.CaseMap;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.LinearLayout;
-
 import com.example.movilgram.R;
 import com.example.movilgram.adapter.CategoryAdapter;
 import com.example.movilgram.model.Category;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
 
 import java.util.ArrayList;
 
@@ -59,8 +52,8 @@ public class SearchFragment extends Fragment {
         ArrayList<Category> categorias = new ArrayList<>();
 
         categorias.add(new Category("Autos",R.drawable.auto2));
-        categorias.add(new Category("Motocicletas",R.drawable.auto2));
-        categorias.add(new Category("Bicicletas",R.drawable.auto2));
+        categorias.add(new Category("Motocicletas",R.drawable.moto));
+        categorias.add(new Category("Bicicletas",R.drawable.bici));
         return categorias;
 
     }

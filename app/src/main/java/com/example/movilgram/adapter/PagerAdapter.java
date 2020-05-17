@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import java.util.ArrayList;
 
 public class PagerAdapter extends FragmentPagerAdapter {
+
     FragmentManager fragmentManager ;
     ArrayList<Fragment> listaFragments = new ArrayList<>();
 
@@ -19,7 +20,6 @@ public class PagerAdapter extends FragmentPagerAdapter {
     @NonNull
     @Override
     public Fragment getItem(int position) {
-
         return listaFragments.get(position);
     }
 

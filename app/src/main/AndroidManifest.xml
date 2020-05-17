@@ -11,43 +11,43 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.ProfileActivity"
-            android:parentActivityName=".view.ContainerActivity">
+        <activity android:name=".ui.profile.ProfileActivity"
+            android:parentActivityName=".ui.ContainerActivity">
 
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.ContainerActivity" />
+                android:value=".ui.ContainerActivity" />
 
         </activity>
-        <activity android:name=".view.NavigationDrawerActivity" />
         <activity
-            android:name=".view.PictureDetailActivity"
-            android:parentActivityName=".view.ContainerActivity">
+            android:name=".ui.product.ProductDetailActivity"
+            android:parentActivityName=".ui.ContainerActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".view.ContainerActivity" />
+                android:value=".ui.ContainerActivity" />
         </activity>
-        <activity android:name=".view.ContainerActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".ui.ContainerActivity">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".ReferenciaActivity" />
         <!--
 CreateAccountActivity es la ventana hija de login y login la padre,
         entonces para que CreateAccountActivity se devuelva del toolbar
          se hace este codigo y para que funcione en versiones anteriores con el meta-data
         -->
         <activity
-            android:name=".view.CreateAccountActivity"
-            android:parentActivityName=".LoginActivity">
+            android:name=".ui.login.CreateAccountActivity"
+            android:parentActivityName=".ui.login.LoginActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LoginActivity" />
+                android:value=".ui.login.LoginActivity" />
         </activity>
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".ui.login.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

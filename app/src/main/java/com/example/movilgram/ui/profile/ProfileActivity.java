@@ -1,12 +1,11 @@
-package com.example.movilgram.view;
+package com.example.movilgram.ui.profile;
+
+import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import android.os.Bundle;
-import android.view.View;
 
 import com.example.movilgram.R;
 import com.example.movilgram.adapter.AutoAdapterRecyclerView;
@@ -19,7 +18,7 @@ public class ProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_profile);
+        setContentView(R.layout.activity_profile);
 
         showToolbar("",true); //no se necesita titulo, tampoco regresar,pasa al view
 
@@ -29,7 +28,7 @@ public class ProfileActivity extends AppCompatActivity {
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);//genera la lista vertical
 
         picturesRecycler.setLayoutManager(linearLayoutManager);
-        AutoAdapterRecyclerView pictureAdapterRecyclerView = new AutoAdapterRecyclerView(buildPictures(),R.layout.cardview_picture,this);
+        AutoAdapterRecyclerView pictureAdapterRecyclerView = new AutoAdapterRecyclerView(buildPictures(),R.layout.cardview_product,this);
         picturesRecycler.setAdapter(pictureAdapterRecyclerView);
 
     }
