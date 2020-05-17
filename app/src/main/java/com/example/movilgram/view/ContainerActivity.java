@@ -1,6 +1,8 @@
 package com.example.movilgram.view;
 
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
@@ -11,12 +13,15 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager.widget.ViewPager;
 
+import com.example.movilgram.LoginActivity;
 import com.example.movilgram.R;
+import com.example.movilgram.adapter.PagerAdapter;
 import com.example.movilgram.view.fragments.HomeFragment;
 import com.example.movilgram.view.fragments.ProfileFragment;
 import com.example.movilgram.view.fragments.SearchFragment;
+import com.example.movilgram.view.fragments.ShopingCartFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -30,6 +35,8 @@ public class ContainerActivity extends AppCompatActivity {
     // y se pueda tener mejor organizado el código
     BottomNavigationView bottomNavigationView;
     FrameLayout container;
+    ViewPager viewPager;
+    ShopingCartFragment shopingCartFragment;
 
     HomeFragment home;
     ProfileFragment profile;
@@ -44,11 +51,14 @@ public class ContainerActivity extends AppCompatActivity {
         drawerLayout = findViewById(R.id.drawer_layout);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         container = findViewById(R.id.container);
+        viewPager=findViewById(R.id.viewPager);
+
 
         //Aqui se declaran todos los fragments que se van a usar
         home = new HomeFragment();
         profile = new ProfileFragment();
         search = new SearchFragment();
+        shopingCartFragment = new ShopingCartFragment();
 
         showToolbar(getResources().getString(R.string.tab_home), true);//llamar un recurso, en este caso string y se llama al string que se creo, el true para que se vea
 
@@ -57,12 +67,14 @@ public class ContainerActivity extends AppCompatActivity {
         setBottomNav();
 
         //Aqui se le dice al container que fragment cargar al momento de iniciar el activity
-        setFragment(home);
+        //setFragment(home);
+
+        setUpViewPager(getPagerAdpater());
 
         //Con este método se le dice cual item del menú está seleccionado
-        bottomNavigationView.setSelectedItemId(R.id.home);
+        bottomNavigationView.setSelectedItemId(R.id.mn_home);
     }
-
+//evento que muestra las opciones del menu, entre las cuales se puede navegar a sus respectivas fragments
     private void setNavView() {
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -71,15 +83,21 @@ public class ContainerActivity extends AppCompatActivity {
                 Fragment fragment = null;
                 switch (menuItem.getItemId()) {
                     case R.id.menu_home:
-                        setFragment(home);
+                       // setFragment(home);
                         break;
 
-                    case R.id.menu_search:
-                        setFragment(search);
+                    case R.id.menu_configuracion:
+                        //setFragment(search);
                         break;
 
                     case R.id.menu_user:
-                        setFragment(profile);
+                        Intent profile = new Intent(getApplicationContext(),ProfileActivity.class);
+                        startActivity(profile);
+                        //setFragment(profile);
+                        break;
+                    case R.id.menu_salir:
+                        Intent intent = new Intent(getApplicationContext(),LoginActivity.class);
+                        startActivity(intent);
                         break;
                 }
                 if (fragmentTransaction) {
@@ -102,15 +120,18 @@ public class ContainerActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
-                    case R.id.home:
+                    case R.id.mn_home:
                         //Aquí se llama al método para que relacione el container con el fragment
-                        setFragment(home);
+                        viewPager.setCurrentItem(0);
+                        //setFragment(home);
                         return true;
-                    case R.id.search:
-                        setFragment(search);
+                    case R.id.mn_search:
+                        viewPager.setCurrentItem(1);
+                       // setFragment(search);
                         return true;
-                    case R.id.profile:
-                        setFragment(profile);
+                    case R.id.menu_cart:
+                        viewPager.setCurrentItem(2);
+                       // setFragment(profile);
                         return true;
                 }
                 return false;
@@ -121,11 +142,11 @@ public class ContainerActivity extends AppCompatActivity {
 
 
     //Este método le dice al container que fragment colocar dentro de ese contenedor
-    private void setFragment(Fragment fragment) {
+   /* private void setFragment(Fragment fragment) {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.container, fragment);
         transaction.commit();
-    }
+    }*/
 
     public void showToolbar(String title, boolean upButton) { //recibe un titulo, la mayoria y algunos botones
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -146,6 +167,45 @@ public class ContainerActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
+
+   public PagerAdapter getPagerAdpater(){
+        PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(home);
+        adapter.addFragment(search);
+        adapter.addFragment(shopingCartFragment);
+        return adapter;
+   }
+   public void setUpViewPager(PagerAdapter pagerAdapter){
+        viewPager.setAdapter(pagerAdapter);
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position){
+                    case 0:
+                        bottomNavigationView.getMenu().findItem(R.id.mn_home).setChecked(true);
+                        break;
+                    case 1:
+                        bottomNavigationView.getMenu().findItem(R.id.mn_search).setChecked(true);
+                        break;
+                    case 2:
+                        bottomNavigationView.getMenu().findItem(R.id.menu_cart).setChecked(true);
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
+   }
+
 }
 
 

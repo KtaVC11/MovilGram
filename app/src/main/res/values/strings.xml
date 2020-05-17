@@ -8,7 +8,7 @@
     <string name="hint_email">Correo</string>
     <string name="hint_name">Nombre</string>
     <string name="hint_user">Usuario</string>
-    <string name="hint_confirm_password">Confirmar constrase;a</string>
+    <string name="hint_confirm_password">Confirmar constraseña</string>
     <string name="text_button_createaccount">Unete</string>
     <string name="toolbar_title_createaccount">Crear Cuenta</string>
     <string name="username_Card">Audi</string>
